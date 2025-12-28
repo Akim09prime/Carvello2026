@@ -1,0 +1,177 @@
+You are a senior UI engineer. Build a static multi-page website (HTML/CSS/JS) that matches the attached screenshots EXACTLY in layout, typography, colors, spacing and overall “dark luxury” style.
+
+GOAL
+Recreate the design shown in screenshots:
+- Dark charcoal background
+- Warm gold accent buttons and active nav link
+- Serif headings + sans body
+- Minimal, premium, lots of vertical spacing
+- Subtle borders, glassy panels, rounded corners
+- Sticky top navigation
+- Sections: Hero, “De ce Carvello StudioCraft?”, “Serviciile noastre”, “Proiecte de referință”, “Procesul nostru, simplificat”, “Materiale și Parteneri de Încredere”
+
+TECH CONSTRAINTS
+- Use plain HTML + CSS + vanilla JS (NO React, NO Next.js, NO Tailwind).
+- Use Google Fonts: "DM Serif Display" (headings/logo) and "Inter" (body/nav/buttons).
+- Create clean, well-commented code. Responsive desktop + mobile menu.
+
+PROJECT STRUCTURE (create these files)
+/
+  index.html
+  despre.html
+  servicii.html
+  servicii-cnc.html
+  portofoliu.html
+  magazin.html
+  proces-garantii.html
+  materiale.html
+  recenzii.html
+  contact.html
+  assets/
+     hero.jpg (placeholder image)
+     service-1.jpg service-2.jpg service-3.jpg service-4.jpg (placeholders)
+     logo.svg (simple text logo is OK)
+     partner-1.png ... partner-6.png (placeholders)
+  styles.css
+  script.js
+
+DESIGN TOKENS (must use CSS variables and match premium look)
+In styles.css define:
+:root{
+  --bg: #1F1F1F;                 /* main background (from screenshots) */
+  --bg-2: #171717;               /* darker gradient edge */
+  --panel: rgba(255,255,255,0.02); /* card/panel subtle */
+  --border: rgba(255,255,255,0.06);
+  --text: #F4F4F2;               /* main white text (from screenshots) */
+  --muted: #B0AFAC;              /* secondary text (from screenshots) */
+  --gold: #BE9A5A;               /* gold accent extracted from button */
+  --gold-2: #C9A366;             /* hover gold slightly lighter */
+  --shadow: 0 10px 30px rgba(0,0,0,0.35);
+  --radius: 16px;                /* rounded corners */
+  --container: 1120px;           /* centered container width */
+}
+
+GLOBAL TYPOGRAPHY
+- Body: Inter 14-16px, line-height 1.6, text color var(--text)
+- Headings: DM Serif Display; H1 ~ 52px desktop, 34px mobile
+- H2 ~ 34px desktop, 26px mobile
+- Use letter spacing subtle only on nav (0.2px)
+
+LAYOUT RULES
+- Use a centered container: max-width var(--container); margin: 0 auto; padding: 0 24px
+- Large vertical spacing between sections: 90–120px desktop, 60–80px mobile
+- Cards: background var(--panel), border 1px solid var(--border), radius var(--radius), shadow subtle on hover
+- Buttons: pill/rounded, gold primary, outline secondary.
+
+HEADER / NAV (must match screenshots)
+- Sticky header at top with slight transparency + blur:
+  background: rgba(31,31,31,0.72); backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  height ~ 72px
+- Left: “Carvello.” logo (DM Serif Display, white, dot visible).
+- Center: menu links in Inter, small size (13-14px), muted color by default
+  Items (exact order):
+    Acasă
+    Despre
+    Servicii (dropdown)
+    Servicii CNC (dropdown)
+    Portofoliu
+    Magazin
+    Proces & Garanții
+    Materiale
+    Recenzii
+- Right: Contact link + gold CTA button “Cere Ofertă”
+- Active page link highlighted in gold (#BE9A5A)
+- Dropdown menu: on hover (desktop) show a small dark panel with border and subtle shadow.
+- Mobile: hamburger opens full-screen or side drawer menu with same items.
+
+HERO (index.html)
+- Full-width hero background image: assets/hero.jpg with overlay to dark:
+  Use background-image with gradient overlay:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url(...)
+- Keep hero height around 70–80vh desktop, 60vh mobile
+- Centered hero content panel (glass):
+  background: rgba(20,20,20,0.45); border: 1px solid var(--border);
+  padding ~ 28–34px; radius var(--radius); backdrop blur.
+- Hero text EXACT:
+  H1: “Mobilier la comandă, fără compromisuri.”
+  Subtitle: “Proiectăm, producem și montăm în fabrica noastră din București — cu calitate premium la fiecare detaliu.”
+  Buttons:
+   - Primary gold: “Cere ofertă”
+   - Secondary outline: “Vezi portofoliu”
+  Add small bullet/feature line under buttons (optional) but keep minimal.
+
+SECTION: “De ce Carvello StudioCraft?”
+- Centered title and subtitle (same as screenshot):
+  H2: “De ce Carvello StudioCraft?”
+  small text: “Patru piloni care ne definesc calitatea și dedicarea pentru fiecare proiect de mobilier la comandă.”
+- 4 cards in one row desktop, 2x2 tablet, 1 column mobile
+- Each card has a small icon (use inline SVG line icons in gold), heading, and text:
+  1) Producție Proprie
+     “Control total asupra calității și termenelor de execuție în fabrica noastră din București.”
+  2) Materiale Certificate
+     “Folosim doar materiale de la branduri de top (Egger, Blum), garantând durabilitate și estetică.”
+  3) Montaj Curat
+     “Echipele noastre asigură un montaj precis, rapid și curat, cu minimum de deranj.”
+  4) Design 3D
+     “Vizualizezi proiectul în detaliu înainte de a intra în producție, pentru certitudine totală.”
+
+SECTION: “Serviciile noastre”
+- H2: “Serviciile noastre”
+- Subtitle: “Soluții complete de mobilier la comandă, adaptate fiecărui tip de spațiu și stil de viață.”
+- 4 service cards with image top (rounded), title, description:
+  1) Bucătării la Comandă — “Soluții ergonomice și estetice pentru inima casei tale.”
+  2) Dressing & Dormitoare — “Maximizăm spațiul de depozitare cu soluții inteligente.”
+  3) Living & Hol — “Creăm piese centrale care definesc stilul casei tale.”
+  4) Birouri & Spații Comerciale — “Mobilier funcțional și durabil pentru afacerea ta.”
+- Card hover: image slightly scales (transform: scale(1.03)) and border brightens.
+
+SECTION: “Proiecte de referință”
+- Centered H2: “Proiecte de referință”
+- Subtitle: “O selecție de lucrări recente care reflectă diversitatea și calitatea execuției noastre.”
+- Button centered: “Vezi toate proiectele →” (outline)
+- Under it you can add an optional 3-column project preview grid (placeholders), but keep aligned with screenshot (minimal).
+
+SECTION: “Procesul nostru, simplificat” (timeline)
+- H2: “Procesul nostru, simplificat”
+- Subtitle: “De la idee la realitate în 4 pași clari și eficienți.”
+- Create a horizontal timeline with:
+  - A thin gold line across the row
+  - 4 gold circles with numbers 1–4
+  - Under each: title + small paragraph
+    1) Consultanță
+       “Discutăm ideile, nevoile și bugetul tău pentru a contura direcția proiectului.”
+    2) Design & Ofertare
+       “Creăm randări 3D fotorealiste și o ofertă detaliată, transparentă.”
+    3) Producție & QC
+       “Fabricăm mobilierul în atelierul nostru, cu control strict al calității la fiecare pas.”
+    4) Montaj & Garanție
+       “Livrăm, montăm cu grijă și oferim garanție pentru manoperă și materiale.”
+- Must look very close to screenshot: circles sit on the line; text aligned below.
+
+SECTION: “Materiale și Parteneri de Încredere”
+- H2: “Materiale și Parteneri de Încredere”
+- Subtitle: “Colaborăm exclusiv cu branduri de top pentru a garanta durabilitatea și estetica mobilierului tău.”
+- Show 6 partner logos in one row desktop (or wrap). Logos grayscale by default, brighten on hover.
+- Use placeholder images in assets/partner-*.png.
+
+FOOTER
+- Keep minimal premium footer (dark, border-top), include:
+  - Logo
+  - Quick links
+  - Contact (phone/email placeholder)
+  - Small copyright
+
+ANIMATIONS (subtle, like premium)
+- Implement “fade-in on scroll” using IntersectionObserver in script.js:
+  elements with class .reveal should animate from opacity 0 + translateY(14px) to visible.
+- Keep motion subtle and not flashy.
+
+PAGE STUBS
+For other pages (despre, servicii, etc.):
+- Use same header/footer
+- Add a simple hero title (H1) matching the nav label
+- Keep same background and typography.
+
+DELIVERABLE
+Return the full code for all files. Ensure the website runs in Replit with a simple static server or Replit HTML preview. No external build steps. All assets can be placeholders; include fallback gradients if images missing.
