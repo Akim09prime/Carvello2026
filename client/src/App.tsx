@@ -20,6 +20,8 @@ import Recenzii from "@/pages/Recenzii";
 import Contact from "@/pages/Contact";
 import Vopsitorie from "@/pages/Vopsitorie";
 import Proiectare from "@/pages/Proiectare";
+import CerereOferta from "@/pages/CerereOferta";
+import Proiect from "@/pages/Proiect";
 
 // Scroll to top component
 import { useEffect } from "react";
@@ -52,6 +54,8 @@ function Router() {
           <Route path="/recenzii" component={Recenzii} />
           <Route path="/vopsitorie" component={Vopsitorie} />
           <Route path="/proiectare" component={Proiectare} />
+          <Route path="/cerere-oferta" component={CerereOferta} />
+          <Route path="/proiect/:id" component={Proiect} />
           <Route path="/contact" component={Contact} />
           <Route component={NotFound} />
         </Switch>
