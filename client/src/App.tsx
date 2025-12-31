@@ -17,6 +17,7 @@ import Portofoliu from "@/pages/Portofoliu";
 import Magazin from "@/pages/Magazin";
 import ProcesGarantii from "@/pages/ProcesGarantii";
 import Recenzii from "@/pages/Recenzii";
+import Contact from "@/pages/Contact";
 import Vopsitorie from "@/pages/Vopsitorie";
 import Proiectare from "@/pages/Proiectare";
 
