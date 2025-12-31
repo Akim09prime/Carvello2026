@@ -1,0 +1,171 @@
+Ești un senior full-stack UI engineer. Lucrezi pe proiectul meu existent din Replit (site Carvello.ro). Am deja designul premium dark + accent gold și am rulat deja un prompt care a modificat meniul (Prompt1). NU strica meniul și NU schimba stilul general.
+
+OBIECTIV (PHASE 1 – FINALIZARE SITE)
+Finalizează complet site-ul cu:
+1) Pagini complete + conținut (texte profesioniste, premium, în română) pentru:
+   - servicii.html (mobilier la comandă)
+   - servicii-cnc.html (doar CNC: frezări / riflaje / fronturi / panouri decorative – FĂRĂ debitare și FĂRĂ cant)
+   - vopsitorie.html (vopsitorie MDF)
+   - proiectare.html (proiectare: cote/liste debitare, proiect găurire, randare, RLV)
+   - portofoliu.html (timeline)
+   - proiect.html (detaliu proiect cu timeline + galerie + video)
+   - cerere-oferta.html (pagina separată de ofertă, cu upload fișiere, obligatoriu)
+   - magazin.html (În curând – landing simplu)
+   - proces-garantii.html (explică proces + garanții)
+   - materiale.html (branduri + argumente)
+   - recenzii.html (testimoniale)
+   - contact.html (contact + harta + CTA)
+   - despre.html (despre companie + capacitate 3 CNC + atelier + valori)
+   - index.html (asigură-te că are secțiunile din screenshot: De ce noi, Servicii, Proiecte, Proces, Materiale)
+
+2) Animații premium:
+   - “fade in up” la scroll pentru secțiuni (IntersectionObserver)
+   - hover micro-interactions: card border glow subtil, image scale ușor
+   - butoane: hover gold lighten + shadow subtil
+   - meniu sticky blur deja existent – păstrează
+
+3) Portofoliu – timeline + video (IMPORTANT):
+   - portofoliu.html trebuie să fie un timeline vertical (ordine după dată, cel mai nou sus)
+   - fiecare proiect e un “timeline node” cu: dată, categorie, titlu, locație, cover, descriere scurtă + buton “Vezi proiectul”
+   - “Vezi proiectul” duce la proiect.html?id=...
+   - proiect.html:
+     - hero cu cover + titlu + meta
+     - secțiune “Procesul proiectului” ca timeline pe pași:
+       Proiectare → Randare → Producție → Montaj
+     - fiecare pas are un grid de poze (click -> lightbox modal)
+     - dacă există videoUrl, afișează un video embed (YouTube/Vimeo) SAU video local (.mp4) în <video controls>
+     - galerie finală (grid)
+   - Toate proiectele trebuie să fie dintr-un fișier data/portfolio.json (data-driven).
+     Creează data/portfolio.json cu minim 8 proiecte exemplu (placeholder assets ok).
+     Structură recomandată:
+     {
+       "projects":[
+         {
+           "id":"p001",
+           "date":"2025-09-01",
+           "category":"Bucătărie",
+           "title":"Bucătărie modernă – riflaje & fronturi vopsite",
+           "location":"București",
+           "cover":"assets/portfolio/p001/cover.jpg",
+           "summary":"Descriere scurtă premium.",
+           "videoUrl":"https://www.youtube.com/watch?v=xxxx (poate fi gol)",
+           "steps":[
+             {"label":"Proiectare","media":["assets/portfolio/p001/step-proiectare-1.jpg"]},
+             {"label":"Randare","media":["assets/portfolio/p001/step-randare-1.jpg"]},
+             {"label":"Producție","media":["assets/portfolio/p001/step-productie-1.jpg"]},
+             {"label":"Montaj","media":["assets/portfolio/p001/step-montaj-1.jpg"]}
+           ],
+           "gallery":[
+             "assets/portfolio/p001/g1.jpg",
+             "assets/portfolio/p001/g2.jpg"
+           ]
+         }
+       ]
+     }
+   - În portofoliu adaugă:
+     - filtre pe categorie (chips) + search după titlu/locație
+     - menține designul premium (dark panels, border subtil, gold accent)
+
+4) Cerere ofertă – form cu upload + backend simplu (IMPORTANT):
+   - cerere-oferta.html este pagina principală de conversie (CTA “Cere ofertă” duce aici).
+   - Form obligatoriu cu:
+     nume, telefon, email, tip cerere, locație, mesaj, upload poze/planuri (multiple, required), checkbox GDPR (required)
+   - Tip cerere (select):
+     - Mobilier la comandă
+     - Servicii CNC (riflaje/fronturi/decor)
+     - Vopsitorie MDF
+     - Proiectare (liste/cote, găurire, randare, RLV)
+   - Dacă URL are ?tip=cnc / ?tip=vopsitorie / ?tip=proiectare, preselectează automat.
+   - Upload rules:
+     - max 8 fișiere
+     - max 8MB fiecare
+     - accept .jpg .jpeg .png .webp .pdf .mp4 (mp4 doar dacă e mic; altfel recomandare să pună link)
+     - afișează listă fișiere selectate (nume + mărime)
+   - Validare client-side + mesaje sub fiecare field + stare loading + success panel.
+
+   BACKEND (în Replit, fără framework complicat):
+   - Creează server.js (Node + Express) care:
+     - servește site static (toate paginile)
+     - endpoint POST /api/quote multipart/form-data (multer)
+     - salvează fișierele în /uploads cu nume safe
+     - scrie fiecare cerere într-un fișier data/quotes.json (append), ca să fie sigur că nu pierd cererile chiar dacă emailul nu e configurat
+     - opțional: dacă există SMTP env vars, trimite email cu nodemailer:
+       SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, TO_EMAIL
+     - spam protection:
+       honeypot field + rate limit simplu (max 5/oră per IP)
+   - Frontend-ul trimite la /api/quote și afișează success UI.
+
+   NOTĂ: dacă SMTP nu e setat, aplicația tot trebuie să funcționeze (salvare în quotes.json).
+
+5) Conținut & Copywriting (premium, scurt, clar):
+   - Stil: lux discret, profesionist, fără exagerări.
+   - Ton: “producție proprie, control calitate, atelier București, 3 CNC, randare 3D, finisaj premium”.
+   - Textele trebuie să fie completate pe fiecare pagină, nu placeholder lorem ipsum.
+
+   INDEX.HTML (recrează structura din screenshot, păstrează look-ul):
+   - Hero: “Mobilier la comandă, fără compromisuri.”
+     Sub: “Proiectăm, producem și montăm în fabrica noastră din București — cu control total al calității.”
+     Buttons: “Cere ofertă” (cerere-oferta.html) + “Vezi portofoliu” (portofoliu.html)
+   - “De ce Carvello StudioCraft?” (4 carduri) – păstrează ca în screenshot
+   - “Serviciile noastre” (4 carduri: Bucătării, Dressing, Living, Birouri) – păstrează ca în screenshot
+   - “Proiecte de referință” (CTA + mini grid)
+   - “Procesul nostru, simplificat” timeline 4 pași (exact ca screenshot)
+   - “Materiale și Parteneri de Încredere” logo row
+   - CTA final
+
+   SERVICII-CNC.HTML (IMPORTANT – fără debitare/cant):
+   - secțiuni + carduri servicii:
+     - Frezări CNC de precizie (decupaje, îmbinări, perforări)
+     - Riflaje / fluted panels (fronturi, panouri, riflaje verticale/orizontale)
+     - Fronturi bucătărie (MDF frezat/ riflat/ pregătit pentru vopsire)
+     - Panouri decorative & branding (logo-uri, plăci, elemente)
+   - Ce fișiere poți trimite: PDF/DXF/DWG/SVG + poze inspirație
+   - CTA: cerere-oferta.html?tip=cnc
+
+   VOPSITORIE.HTML:
+   - “Vopsitorie MDF Premium”
+   - finisaje: mat/satin/lucios, culori RAL/NCS (text general)
+   - pregătire, grunduire, finisare, control
+   - CTA: cerere-oferta.html?tip=vopsitorie
+
+   PROIECTARE.HTML:
+   - “Proiectare mobilier & Randare”
+   - servicii:
+     - cote + liste de debitare (documentație)
+     - proiect de găurire / feronerie (blum/hettich etc – menționează generic)
+     - randări fotorealiste (pre-producție)
+     - RLV / Releveu (ridicare la fața locului)
+   - CTA: cerere-oferta.html?tip=proiectare
+
+   PROCES-GARANTII.HTML:
+   - aceeași logică 4 pași + detalii + ce include garanția (manoperă/materiale – general)
+
+   CONTACT.HTML:
+   - card contact (telefon, email, adresă – pune placeholders + comentariu “update me”)
+   - butoane rapide: Sună / WhatsApp / Email
+   - embedded map placeholder (iframe)
+   - CTA: cerere-oferta
+
+6) Lightbox Gallery (IMPORTANT):
+   - click pe orice imagine din portofoliu/proiect -> deschide modal lightbox
+   - next/prev (săgeți), ESC close, click outside close
+   - păstrează stil dark premium
+
+7) Consistență design (nu strica):
+   - folosește aceleași CSS variables și fonturi: DM Serif Display + Inter
+   - păstrează: background dark, border subtil, gold accent (#BE9A5A aproximativ), radius ~16px
+   - spacing mare între secțiuni ca în screenshots
+   - header/footer identice pe toate paginile
+   - butoane: primary gold + secondary outline
+
+EXCLUDE (NU FACE ACUM):
+- SEO meta tags, sitemap, robots, openGraph (le facem după)
+- Admin panel complet pentru portofoliu (îl facem după)
+- Orice redesign major al meniului (deja făcut)
+
+DELIVERABLE
+- Aplică modificările în codul existent.
+- Creează fișierele lipsă, data/portfolio.json, server.js, uploads/, data/quotes.json.
+- Actualizează package.json cu dependențe (express, multer, nodemailer).
+- Asigură-te că proiectul pornește în Replit cu `node server.js`.
+- Nu cere întrebări; ia decizii rezonabile și pune placeholders unde nu ai date (dar păstrează text premium).
