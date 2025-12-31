@@ -1,8 +1,15 @@
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Badge } from "@/components/ui/badge";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export default function Navigation() {
   const [location] = useLocation();
@@ -17,13 +24,23 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const links = [
+  const navItems = [
     { href: "/", label: "Acasă" },
     { href: "/despre", label: "Despre" },
     { href: "/servicii", label: "Servicii" },
-    { href: "/servicii-cnc", label: "CNC" },
+    {
+      label: "Servicii CNC",
+      dropdown: [
+        { href: "/servicii-cnc#frezari", label: "Frezări CNC" },
+        { href: "/servicii-cnc#riflaje", label: "Riflaje / Fluted" },
+        { href: "/servicii-cnc#fronturi", label: "Fronturi bucătărie" },
+        { href: "/servicii-cnc#decor", label: "Panouri decorative / Gravură" },
+      ]
+    },
+    { href: "/vopsitorie", label: "Vopsitorie" },
+    { href: "/proiectare", label: "Proiectare" },
     { href: "/portofoliu", label: "Portofoliu" },
-    { href: "/magazin", label: "Magazin" },
+    { href: "/magazin", label: "Magazin", isSoon: true },
     { href: "/proces-garantii", label: "Proces" },
     { href: "/recenzii", label: "Recenzii" },
   ];
@@ -43,16 +60,38 @@ export default function Navigation() {
 
         {/* Desktop Menu */}
         <div className="hidden xl:flex items-center gap-6">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                location === link.href ? "text-primary" : "text-muted-foreground"
-              }`}
-            >
-              {link.label}
-            </Link>
+          {navItems.map((item) => (
+            item.dropdown ? (
+              <DropdownMenu key={item.label}>
+                <DropdownMenuTrigger className={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary outline-none ${
+                  location.startsWith("/servicii-cnc") ? "text-primary" : "text-muted-foreground"
+                }`}>
+                  {item.label} <ChevronDown className="h-3 w-3" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="bg-[#1a1a1a] border-white/10 text-white min-w-[200px]">
+                  {item.dropdown.map((subItem) => (
+                    <DropdownMenuItem key={subItem.href} asChild className="focus:bg-white/5 focus:text-primary cursor-pointer">
+                      <Link href={subItem.href}>{subItem.label}</Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`flex items-center gap-2 text-sm font-medium transition-colors hover:text-primary ${
+                  location === item.href ? "text-primary" : "text-muted-foreground"
+                }`}
+              >
+                {item.label}
+                {item.isSoon && (
+                  <Badge variant="outline" className="text-[10px] h-4 px-1.5 border-primary/30 text-primary uppercase font-bold bg-primary/5">
+                    În curând
+                  </Badge>
+                )}
+              </Link>
+            )
           ))}
           <Link href="/contact">
             <Button
@@ -80,20 +119,45 @@ export default function Navigation() {
                   </span>
                 </div>
                 
-                <div className="flex flex-col gap-4">
-                  {links.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      onClick={() => setIsOpen(false)}
-                      className={`text-lg font-medium transition-colors hover:text-primary ${
-                        location === link.href ? "text-primary" : "text-muted-foreground"
-                      }`}
-                    >
-                      {link.label}
-                    </Link>
+                <div className="flex flex-col gap-4 overflow-y-auto">
+                  {navItems.map((item) => (
+                    item.dropdown ? (
+                      <div key={item.label} className="space-y-3">
+                        <span className="text-xs uppercase tracking-widest text-gray-500 font-bold">{item.label}</span>
+                        <div className="flex flex-col gap-3 pl-4 border-l border-white/5">
+                          {item.dropdown.map((subItem) => (
+                            <Link
+                              key={subItem.href}
+                              href={subItem.href}
+                              onClick={() => setIsOpen(false)}
+                              className={`text-base font-medium transition-colors hover:text-primary ${
+                                location === subItem.href ? "text-primary" : "text-muted-foreground"
+                              }`}
+                            >
+                              {subItem.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ) : (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={() => setIsOpen(false)}
+                        className={`flex items-center gap-2 text-lg font-medium transition-colors hover:text-primary ${
+                          location === item.href ? "text-primary" : "text-muted-foreground"
+                        }`}
+                      >
+                        {item.label}
+                        {item.isSoon && (
+                          <Badge variant="outline" className="text-[10px] h-4 px-1.5 border-primary/30 text-primary uppercase font-bold bg-primary/5">
+                            În curând
+                          </Badge>
+                        )}
+                      </Link>
+                    )
                   ))}
-                  <div className="h-px bg-white/10 my-4" />
+                  <div className="h-px bg-white/10 my-4 shrink-0" />
                   <Link href="/contact" onClick={() => setIsOpen(false)}>
                     <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-full">
                       Cere Ofertă
