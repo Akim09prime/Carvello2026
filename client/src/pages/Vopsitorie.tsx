@@ -55,8 +55,8 @@ export default function Vopsitorie() {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/contact?tip=vopsitorie">
-            <Button size="lg" className="rounded-full bg-primary text-primary-foreground font-bold px-8">
+          <Link href="/cerere-oferta?tip=vopsitorie">
+            <Button size="lg" className="rounded-full bg-primary text-primary-foreground font-bold px-8" data-testid="button-cta-vopsitorie">
               Cere ofertă vopsitorie
             </Button>
           </Link>

@@ -56,9 +56,9 @@ export default function Footer() {
                 { label: "Dressing & Dulapuri", href: "/servicii" },
                 { label: "Mobilier Living", href: "/servicii" },
                 { label: "Servicii CNC", href: "/servicii-cnc" },
-                { label: "Proiectare 3D", href: "/servicii" },
-              ].map((link) => (
-                <li key={link.href}>
+                { label: "Proiectare 3D", href: "/proiectare" },
+              ].map((link, idx) => (
+                <li key={idx}>
                   <Link href={link.href} className="text-muted-foreground hover:text-primary text-sm transition-colors">
                     {link.label}
                   </Link>

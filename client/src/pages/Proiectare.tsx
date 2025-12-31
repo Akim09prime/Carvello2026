@@ -62,8 +62,8 @@ export default function Proiectare() {
           <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
             Oferim servicii de proiectare atât pentru clienți finali cât și pentru ateliere care doresc externalizarea părții tehnice.
           </p>
-          <Link href="/contact?tip=proiectare">
-            <Button size="lg" className="rounded-full bg-primary text-primary-foreground font-bold px-12">
+          <Link href="/cerere-oferta?tip=proiectare">
+            <Button size="lg" className="rounded-full bg-primary text-primary-foreground font-bold px-12" data-testid="button-cta-proiectare">
               Cere ofertă proiectare
             </Button>
           </Link>

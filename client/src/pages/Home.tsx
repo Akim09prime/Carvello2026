@@ -75,8 +75,8 @@ export default function Home() {
               Proiectăm, producem și montăm în fabrica noastră din București — cu calitate premium la fiecare detaliu.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
-                <Button size="lg" className="text-lg px-8 py-6 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-[0_0_20px_rgba(190,154,90,0.3)] hover:shadow-[0_0_30px_rgba(190,154,90,0.5)] transition-all">
+              <Link href="/cerere-oferta">
+                <Button size="lg" className="text-lg px-8 py-6 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-[0_0_20px_rgba(190,154,90,0.3)] hover:shadow-[0_0_30px_rgba(190,154,90,0.5)] transition-all" data-testid="button-hero-cta">
                   Cere Ofertă
                 </Button>
               </Link>
@@ -127,7 +127,7 @@ export default function Home() {
               <p className="text-muted-foreground max-w-md">Soluții complete de amenajare pentru fiecare colț al casei tale.</p>
             </div>
             <Link href="/servicii">
-              <Button variant="link" className="text-primary hover:text-primary/80 p-0 text-lg group">
+              <Button variant="ghost" className="text-primary hover:text-primary/80 text-lg group">
                 Vezi toate serviciile <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
