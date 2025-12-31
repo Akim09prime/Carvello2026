@@ -1,0 +1,162 @@
+{
+  "projects": [
+    {
+      "id": "p001",
+      "date": "2025-11-15",
+      "category": "Bucătărie",
+      "title": "Bucătărie modernă cu riflaje verticale",
+      "location": "București, Sector 1",
+      "cover": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&q=80&w=1200",
+      "summary": "Bucătărie în L cu fronturi MDF riflat vopsit în nuanță gri antracit. Feronerie Blum Legrabox, blat quartz Silestone.",
+      "videoUrl": "",
+      "steps": [
+        {"label": "Proiectare", "media": ["https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=800"]},
+        {"label": "Randare", "media": ["https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&q=80&w=800"]},
+        {"label": "Producție", "media": ["https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&q=80&w=800"]},
+        {"label": "Montaj", "media": ["https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&q=80&w=800"]}
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&q=80&w=1200",
+        "https://images.unsplash.com/photo-1556909172-54557c7e4fb7?auto=format&fit=crop&q=80&w=1200",
+        "https://images.unsplash.com/photo-1556909212-d5b604d0c90d?auto=format&fit=crop&q=80&w=1200"
+      ]
+    },
+    {
+      "id": "p002",
+      "date": "2025-10-20",
+      "category": "Dressing",
+      "title": "Dressing walk-in cu oglinzi integrate",
+      "location": "București, Pipera",
+      "cover": "https://images.unsplash.com/photo-1558171813-4c088753af8f?auto=format&fit=crop&q=80&w=1200",
+      "summary": "Dressing generos cu uși glisante, oglinzi full-height și sistem de organizare custom. Iluminare LED integrată.",
+      "videoUrl": "",
+      "steps": [
+        {"label": "Proiectare", "media": ["https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=800"]},
+        {"label": "Randare", "media": ["https://images.unsplash.com/photo-1558171813-4c088753af8f?auto=format&fit=crop&q=80&w=800"]},
+        {"label": "Producție", "media": ["https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&q=80&w=800"]},
+        {"label": "Montaj", "media": ["https://images.unsplash.com/photo-1558171813-4c088753af8f?auto=format&fit=crop&q=80&w=800"]}
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1558171813-4c088753af8f?auto=format&fit=crop&q=80&w=1200",
+        "https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?auto=format&fit=crop&q=80&w=1200"
+      ]
+    },
+    {
+      "id": "p003",
+      "date": "2025-09-05",
+      "category": "Living",
+      "title": "Bibliotecă și comodă TV minimalistă",
+      "location": "Brașov",
+      "cover": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=1200",
+      "summary": "Ansamblu living cu bibliotecă pe perete întreg și comodă TV floating. Finisaj stejar natural și MDF vopsit alb mat.",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "steps": [
+        {"label": "Proiectare", "media": ["https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=800"]},
+        {"label": "Randare", "media": ["https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=800"]},
+        {"label": "Producție", "media": ["https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&q=80&w=800"]},
+        {"label": "Montaj", "media": ["https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=800"]}
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=1200",
+        "https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&q=80&w=1200"
+      ]
+    },
+    {
+      "id": "p004",
+      "date": "2025-08-12",
+      "category": "Birou",
+      "title": "Birou home-office cu depozitare integrată",
+      "location": "Cluj-Napoca",
+      "cover": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200",
+      "summary": "Birou ergonomic cu rafturi suspendate și management cabluri. Blat stejar masiv tratat, structură metal negru mat.",
+      "videoUrl": "",
+      "steps": [
+        {"label": "Proiectare", "media": ["https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=800"]},
+        {"label": "Randare", "media": ["https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800"]},
+        {"label": "Producție", "media": ["https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&q=80&w=800"]},
+        {"label": "Montaj", "media": ["https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800"]}
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200"
+      ]
+    },
+    {
+      "id": "p005",
+      "date": "2025-07-28",
+      "category": "Bucătărie",
+      "title": "Bucătărie cu insulă și fronturi handleless",
+      "location": "Timișoara",
+      "cover": "https://images.unsplash.com/photo-1556910103-1c02745a30bf?auto=format&fit=crop&q=80&w=1200",
+      "summary": "Design contemporan cu insulă centrală și sistem push-to-open. Fronturi lăcuite alb lucios, blat granit negru.",
+      "videoUrl": "",
+      "steps": [
+        {"label": "Proiectare", "media": ["https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=800"]},
+        {"label": "Randare", "media": ["https://images.unsplash.com/photo-1556910103-1c02745a30bf?auto=format&fit=crop&q=80&w=800"]},
+        {"label": "Producție", "media": ["https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&q=80&w=800"]},
+        {"label": "Montaj", "media": ["https://images.unsplash.com/photo-1556910103-1c02745a30bf?auto=format&fit=crop&q=80&w=800"]}
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1556910103-1c02745a30bf?auto=format&fit=crop&q=80&w=1200",
+        "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&q=80&w=1200"
+      ]
+    },
+    {
+      "id": "p006",
+      "date": "2025-06-15",
+      "category": "Comercial",
+      "title": "Recepție corporate cu branding integrat",
+      "location": "București, Floreasca",
+      "cover": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=1200",
+      "summary": "Desk recepție sculptural din Corian cu logo frezat CNC și iluminare ambientală. Perete din panouri decorative riflate.",
+      "videoUrl": "",
+      "steps": [
+        {"label": "Proiectare", "media": ["https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=800"]},
+        {"label": "Randare", "media": ["https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=800"]},
+        {"label": "Producție", "media": ["https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&q=80&w=800"]},
+        {"label": "Montaj", "media": ["https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=800"]}
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=1200"
+      ]
+    },
+    {
+      "id": "p007",
+      "date": "2025-05-22",
+      "category": "Dressing",
+      "title": "Dulap încastrat cu uși batante",
+      "location": "Iași",
+      "cover": "https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?auto=format&fit=crop&q=80&w=1200",
+      "summary": "Dulap de la perete la perete cu uși din MDF vopsit și interior melamină premium. Sisteme de organizare Häfele.",
+      "videoUrl": "",
+      "steps": [
+        {"label": "Proiectare", "media": ["https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=800"]},
+        {"label": "Randare", "media": ["https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?auto=format&fit=crop&q=80&w=800"]},
+        {"label": "Producție", "media": ["https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&q=80&w=800"]},
+        {"label": "Montaj", "media": ["https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?auto=format&fit=crop&q=80&w=800"]}
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?auto=format&fit=crop&q=80&w=1200"
+      ]
+    },
+    {
+      "id": "p008",
+      "date": "2025-04-10",
+      "category": "Living",
+      "title": "Placare perete TV cu panouri 3D",
+      "location": "Constanța",
+      "cover": "https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&q=80&w=1200",
+      "summary": "Perete accent cu panouri MDF frezate geometric, vopsite în nuanță bej cald. Nișă TV cu iluminare indirectă.",
+      "videoUrl": "",
+      "steps": [
+        {"label": "Proiectare", "media": ["https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=800"]},
+        {"label": "Randare", "media": ["https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&q=80&w=800"]},
+        {"label": "Producție", "media": ["https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&q=80&w=800"]},
+        {"label": "Montaj", "media": ["https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&q=80&w=800"]}
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&q=80&w=1200",
+        "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=1200"
+      ]
+    }
+  ]
+}

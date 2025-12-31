@@ -15,6 +15,34 @@ export const errorSchemas = {
 };
 
 export const api = {
+  portfolio: {
+    list: {
+      method: 'GET' as const,
+      path: '/api/portfolio',
+      responses: {
+        200: z.array(z.any()),
+      },
+    },
+    get: {
+      method: 'GET' as const,
+      path: '/api/portfolio/:id',
+      responses: {
+        200: z.any(),
+        404: errorSchemas.notFound,
+      },
+    },
+  },
+  quote: {
+    submit: {
+      method: 'POST' as const,
+      path: '/api/quote',
+      responses: {
+        201: z.object({ success: z.boolean(), message: z.string() }),
+        400: errorSchemas.validation,
+        429: z.object({ message: z.string() }),
+      },
+    },
+  },
   products: {
     list: {
       method: 'GET' as const,
