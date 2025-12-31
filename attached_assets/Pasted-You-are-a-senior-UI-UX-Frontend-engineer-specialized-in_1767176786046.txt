@@ -1,0 +1,78 @@
+You are a senior UI/UX + Frontend engineer specialized in premium “dark luxury” websites for high-end custom furniture brands.
+
+PROJECT CONTEXT
+- This is the Carvello (carvello.ro) website built in this Replit project.
+- Goal: make the site look truly premium/luxury and optimized for getting high-end orders (lead generation).
+- IMPORTANT: I do NOT want SEO work or an admin dashboard yet. We do those later.
+- Keep all existing routes/pages working. You may refactor components and styling, but do not break navigation.
+
+KEY PROBLEMS TO FIX (based on current UI screenshots)
+1) Site feels static → add tasteful animations, micro-interactions, scroll reveals.
+2) Images are low quality/irrelevant → replace with premium placeholders and structured “Media Slots” so I can easily swap with real photos later.
+3) Content does not sell premium craftsmanship enough → rewrite copy to focus on quality, precision, materials, process, proof.
+
+DESIGN DIRECTION (must match everywhere)
+- Style: “Dark Opulence / Warm Brass / Minimal Luxury”
+- Background: deep charcoal with subtle gradients + grain texture overlay
+- Accent: warm brass/gold
+- Cards: soft glow, subtle border, 14–18px radius, premium shadow
+- Typography: elegant headline serif + clean body sans
+- Spacing: more intentional (reduce empty dead zones, but keep premium breathing room)
+
+GLOBAL DESIGN SYSTEM (implement now)
+1) Fonts:
+   - Headings: "DM Serif Display"
+   - Body/UI: "Inter"
+   - Implement via Google Fonts import + CSS variables.
+2) Colors (create tokens):
+   - bg-0: #0B0B0B
+   - bg-1: #111111
+   - card: #161616
+   - text: #F2F2F2
+   - muted: #B9B9B9
+   - brass: #C29B5A
+   - brass-2: #B58A4A
+   - stroke: rgba(255,255,255,0.08)
+   - glow: rgba(194,155,90,0.18)
+3) Effects:
+   - Add subtle grain overlay (CSS pseudo-element on body)
+   - Add soft radial gradients in hero sections
+   - Buttons: primary brass filled + secondary outline
+   - Hover: lift 4px + glow border on cards/buttons
+
+ANIMATIONS (must add, but keep premium, not “gaming”)
+- Add Framer Motion (or a minimal IntersectionObserver reveal system if Framer is already present).
+- Mandatory:
+  A) Page enter: fade + slight rise (200–350ms)
+  B) Section reveal on scroll: fade + rise, stagger for cards
+  C) Card hover: translateY(-4px), subtle glow
+  D) Hero: slow background zoom (very subtle) OR parallax overlay
+  E) Timeline items: alternate left/right reveal with line progress indicator
+- Respect reduced-motion preference (prefers-reduced-motion).
+
+IMAGES / MEDIA (critical)
+- Create a folder for premium placeholders (e.g., /public/media/placeholders/).
+- Replace irrelevant images:
+  - CNC page: replace trucks image with CNC/workshop placeholder (abstract close-up metal/wood cutting, machine detail, toolpath)
+  - Vopsitorie page: replace phone image with paint booth/spray gun/MDF finish placeholder
+  - Services blocks: use consistent interior/furniture placeholders
+- If real images are not available, create “stylized placeholders”:
+  - dark gradient + subtle vignette + label (e.g., “CNC Precision • Workshop”)
+  - Keep them consistent across the site.
+
+SITE STRUCTURE / CONTENT (rewrite for premium conversion)
+Update copy across pages:
+- Tone: confident, premium, precise, short sentences.
+- Emphasize:
+  - Precision CNC
+  - Premium finishes
+  - Materials and hardware partners (Blum/Hettich/Häfele/Egger)
+  - Process: consult → design → production → installation
+  - Guarantees and QC
+  - “Only premium clients” positioning
+
+PAGES TO IMPROVE (keep existing routing)
+1) Home
+- Hero: stronger headline + subtext + 2 CTAs (“Cere ofertă” primary, “Vezi portofoliu” secondary)
+- Add “Trust bar” under hero: 3–4 badges (e.g., “4 CNC industriale”, “Finisaj premium”, “Proiectare 3D”, “București”)
+- Services section: 4 tiles only

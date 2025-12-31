@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 const servicesList = [
   {
@@ -31,67 +32,98 @@ const servicesList = [
 
 export default function Servicii() {
   return (
-    <div className="pt-24 min-h-screen pb-12">
-      <div className="container px-4 md:px-6 mx-auto">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">Servicii Premium</h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Acoperim toată gama de mobilier la comandă, de la rezidențial la comercial, cu aceeași atenție obsesivă la detalii.
-          </p>
+    <div className="min-h-screen bg-background">
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="absolute inset-0 hero-gradient" />
+        <div className="container px-4 md:px-6 mx-auto relative">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center max-w-3xl mx-auto"
+          >
+            <p className="text-brass uppercase tracking-[0.2em] text-sm font-medium mb-4">
+              Ce Oferim
+            </p>
+            <h1 className="text-foreground mb-6">Servicii Premium</h1>
+            <p className="text-muted-foreground text-lg">
+              Acoperim toată gama de mobilier la comandă, de la rezidențial la comercial, 
+              cu aceeași atenție obsesivă la detalii.
+            </p>
+          </motion.div>
         </div>
+      </section>
 
-        <div className="space-y-24">
-          {servicesList.map((service, idx) => (
-            <motion.div 
-              key={idx}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              className={`flex flex-col ${idx % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 items-center`}
-            >
-              <div className="flex-1 w-full aspect-video lg:aspect-auto lg:h-[400px] rounded-2xl overflow-hidden shadow-2xl">
-                <img src={service.img} alt={service.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
-              </div>
-              
-              <div className="flex-1 space-y-6">
-                <h2 className="text-3xl font-serif font-bold text-white">{service.title}</h2>
-                <p className="text-muted-foreground text-lg leading-relaxed">{service.desc}</p>
-                
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4">
-                  {service.details.map((detail, i) => (
-                    <li key={i} className="flex items-center gap-2 text-sm font-medium text-gray-300">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                      {detail}
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="pt-6">
-                  <Link href="/contact">
-                    <Button className="bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-full px-6">
-                      Solicită ofertă personalizată
-                    </Button>
-                  </Link>
+      <section className="py-24">
+        <div className="container px-4 md:px-6 mx-auto">
+          <div className="space-y-32">
+            {servicesList.map((service, idx) => (
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6 }}
+                className={`flex flex-col ${idx % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 items-center`}
+              >
+                <div className="flex-1 w-full aspect-video lg:aspect-auto lg:h-[450px] rounded-2xl overflow-hidden glass-card">
+                  <img 
+                    src={service.img} 
+                    alt={service.title} 
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" 
+                  />
                 </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+                
+                <div className="flex-1 space-y-6">
+                  <h2 className="text-3xl">{service.title}</h2>
+                  <p className="text-muted-foreground text-lg leading-relaxed">{service.desc}</p>
+                  
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4">
+                    {service.details.map((detail, i) => (
+                      <li key={i} className="flex items-center gap-3 text-foreground/80">
+                        <span className="w-2 h-2 rounded-full bg-brass shrink-0" />
+                        {detail}
+                      </li>
+                    ))}
+                  </ul>
 
-        {/* CNC Banner */}
-        <div className="mt-32 rounded-3xl bg-gradient-to-r from-primary to-yellow-600 p-12 text-center text-primary-foreground relative overflow-hidden">
-          <div className="absolute inset-0 bg-black/10" />
-          <div className="relative z-10">
-            <h2 className="text-3xl font-serif font-bold mb-4">Ai nevoie de debitare sau frezare CNC?</h2>
-            <p className="mb-8 opacity-90 text-lg">Oferim servicii de prelucrare CNC de precizie pentru alți producători sau pasionați DIY.</p>
-            <Link href="/servicii-cnc">
-              <Button size="lg" className="bg-white text-primary hover:bg-gray-100 font-bold rounded-full border-0">
-                Vezi Servicii CNC
-              </Button>
-            </Link>
+                  <div className="pt-6">
+                    <Link href="/cerere-oferta">
+                      <Button className="btn-outline group">
+                        Solicită ofertă personalizată
+                        <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
-      </div>
+      </section>
+
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-brass/5" />
+        <div className="absolute inset-0 hero-gradient" />
+        <div className="container px-4 md:px-6 mx-auto text-center relative">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl mb-4">Ai nevoie de servicii CNC?</h2>
+            <p className="text-muted-foreground mb-10 max-w-xl mx-auto">
+              Oferim servicii de prelucrare CNC de precizie pentru alți producători sau pasionați DIY.
+            </p>
+            <Link href="/servicii-cnc">
+              <Button size="lg" className="btn-primary text-lg px-10 py-7 rounded-full font-semibold group">
+                Vezi Servicii CNC
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
 }
